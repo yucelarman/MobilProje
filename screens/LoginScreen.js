@@ -4,10 +4,9 @@ import {
   Text,
   View,
   TextInput,
-  Button,
   TouchableHighlight,
   Image,
-  Alert
+  
 } from 'react-native';
 import qs from 'querystring';
 import { AsyncStorage } from 'react-native';
@@ -45,8 +44,7 @@ export default class LoginView extends Component {
 
   async getToken (){
     const {data} = await axios.post("http://185.122.201.76:8081/Token");
-    console.log("{data}");
-    console.log({data});
+ 
   }
 
   onClickListener = async (viewId) => {
@@ -65,8 +63,7 @@ export default class LoginView extends Component {
           console.log(response);
           if(response.data.access_token!=null)
           {
-            console.log("this.state.email");
-            console.log("this.state.password");
+           
             this.storeData(response.data);  
             this.props.navigation.navigate('Main');            
           }
@@ -88,8 +85,9 @@ export default class LoginView extends Component {
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Email"
-              keyboardType="email-address"
+              placeholder="Username"
+              autoCapitalize={'none'}
+             
               underlineColorAndroid='transparent'
               onChangeText={(email) => this.setState({email})}/>
         </View>

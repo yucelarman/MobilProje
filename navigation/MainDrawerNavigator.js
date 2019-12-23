@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform ,Dimensions, ScrollView, Image, View } from 'react-native';
 
-import createStackNavigator from  'react-navigation-stack';
+
 
 import {createDrawerNavigator,DrawerItems} from 'react-navigation-drawer';
 import {

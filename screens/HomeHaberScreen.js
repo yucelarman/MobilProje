@@ -53,9 +53,7 @@ export default class HomeHaberScreen extends Component  {
     );
   };
 
-  /*renderHeader = () => {
-    return <SearchBar placeholder="Type Here..." lightTheme round />;
-  };*/
+  
 
  
 
