@@ -34,7 +34,7 @@ export default class App extends React.Component {
      
       snapshot.forEach((doc)=>{
           
-          console.log(this.state.id);
+          
 					if(doc.toJSON().id.toString() ===this.state.id){
            
             this.setState({htmlContent:doc.toJSON().text});          

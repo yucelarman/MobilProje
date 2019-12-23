@@ -21,7 +21,7 @@ export default class LoginView extends Component {
   constructor(props) {
     super(props);
     state = {
-      email   : '',
+      username   : '',
       password: '',
     }
   }
@@ -37,7 +37,7 @@ export default class LoginView extends Component {
   }
   async storeData(response){
 
-    AuthStore.saveToken(JSON.stringify(response),this.state.email,this.state.password)
+    AuthStore.saveToken(JSON.stringify(response),this.state.username,this.state.password)
     
 
   }
@@ -51,7 +51,7 @@ export default class LoginView extends Component {
 
    const requestBody ={
 
-    username: this.state.email,
+    username: this.state.username,
     password: this.state.password,
     grant_type:"password"
    }
@@ -60,7 +60,7 @@ export default class LoginView extends Component {
           'Content-Type': 'application/x-www-form-urlencoded',},
       })
       .then((response) => {
-          console.log(response);
+          
           if(response.data.access_token!=null)
           {
            
@@ -89,7 +89,7 @@ export default class LoginView extends Component {
               autoCapitalize={'none'}
              
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(username) => this.setState({username})}/>
         </View>
 
         <View style={styles.inputContainer}>

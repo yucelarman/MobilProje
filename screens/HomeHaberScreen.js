@@ -26,7 +26,7 @@ export default class HomeHaberScreen extends Component  {
 
       snapshot.forEach((doc)=>{
         
-        this.state.data.push({"id":doc.toJSON().id.toString(),"tarih":doc.toJSON().haberBaslık,"ip":doc.toJSON().haberBaslık});
+        this.state.data.push({"id":doc.toJSON().id.toString(),"tarih":doc.toJSON().tarih,"ip":doc.toJSON().haberBaslık});
         this.setState({loading:false})
         console.log(doc);
       })
@@ -81,11 +81,11 @@ export default class HomeHaberScreen extends Component  {
                 roundAvatar
                 title={<View style={styles.subtitleView2}>
                 <Text style={styles.ratingText2}>Haber Başlığı : </Text>
-                <Text style={styles.ratingText2}>{`${item.tarih}`}</Text>
+                <Text style={styles.ratingText2}>{`${item.ip}`}</Text>
               </View>}
                 subtitle={<View style={styles.subtitleView}>
                 <Text style={styles.ratingText}>Tarih : </Text>
-                <Text style={styles.ratingText}>{item.ip}</Text>
+                <Text style={styles.ratingText}>{item.tarih}</Text>
               </View>}
                 containerStyle={{ borderBottomWidth: 0 }}
               />
